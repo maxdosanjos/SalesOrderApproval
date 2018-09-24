@@ -1,0 +1,100 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="br.com.sales.SalesOrderApproval.controller.Detail">
+	<App>
+		<pages>
+			<Page title="{i18n>DetailTitle}" showNavButton="{device>/system/phone}" navButtonPress="onNavBack">
+				<content>
+					<ObjectHeader xmlns="sap.m" title="{SalesOrderID}" number="{GrossAmount}" numberUnit="{CurrencyCode}" id="header0" intro="{i18n>DetailIntro}" introActive="true" icon="sap-icon://sales-order" numberState="Success">
+						<statuses>
+							<ObjectStatus text="{path: 'LifecycleStatus', formatter: '.Formatter.statusText'}" state="{path: 'LifecycleStatus', formatter: '.Formatter.statusState'}" id="status1"/>
+						</statuses>
+						<attributes>
+							<ObjectAttribute text="{CustomerName}"/>
+							<ObjectAttribute text="{path: 'CreatedAt', formatter: '.Formatter.date'}"/>
+						</attributes>
+					</ObjectHeader>
+					<IconTabBar selectedKey="__filter1" id="bar0">
+						<items>
+							<IconTabFilter text="{i18n>Items}" icon="sap-icon://sales-order-item" iconColor="Positive" id="filter1">
+								<content>
+									<Table noDataText="Carregando..." items="{ToLineItems}" id="table0">
+										<items>
+											<ColumnListItem type="Active" id="item3">
+												<cells>
+													<ObjectIdentifier title="{ProductID}"/>
+													<Text text="{Note}"/>
+													<Text text="{Quantity}"/>
+													<ObjectNumber number="{GrossAmount}" unit="{CurrencyCode}"/>
+													<ObjectNumber number="{TaxAmount}" unit="{CurrencyCode}"/>
+													<ObjectNumber number="{NetAmount}" unit="{CurrencyCode}"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+										<columns>
+											<Column>
+												<header>
+													<Label text="{i18n>ProductName}"/>
+												</header>
+											</Column>
+											<Column>
+												<header>
+													<Label text="{i18n>Note}"/>
+												</header>
+											</Column>
+											<Column>
+												<header>
+													<Label text="{i18n>Quantity}"/>
+												</header>
+											</Column>
+											<Column>
+												<header>
+													<Label text="{i18n>GrossAmount}"/>
+												</header>
+											</Column>
+											<Column>
+												<header>
+													<Label text="{i18n>TaxAmount}"/>
+												</header>
+											</Column>
+											<Column>
+												<header>
+													<Label text="{i18n>NetAmount}"/>
+												</header>
+											</Column>
+										</columns>
+									</Table>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="{i18n>Employee}" icon="sap-icon://employee" iconColor="Critical" id="filter2">
+								<content>
+									<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" minWidth="1024" layout="ResponsiveGridLayout" id="form0">
+										<sap.ui.layout.form:content>
+											<core:Title text="{i18n>BusinessPartner}" id="title0"/>
+											<Label text="{i18n>CompanyName}"/>
+											<Text text="{CompanyName}"/>
+											<Label text="{i18n>EmailAddress}"/>
+											<Text text="{EmailAddress}"/>
+											<Label text="{i18n>Phone}"/>
+											<Text text="{PhoneNumber}"/>
+											<Label text="{i18n>Address}"/>
+											<Text text="{Address/Street}"/>
+											<Label text="{i18n>Country}"/>
+											<Text text="{Address/Country}"/>
+										</sap.ui.layout.form:content>
+									</sap.ui.layout.form:SimpleForm>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			<footer>
+			    <Bar id="bar0_1537735627117">
+			        <contentRight>
+			            <Button xmlns="sap.m" text="{i18n>ReproveButtonText}" id="button0" icon="sap-icon://decline" type="Reject" width="120px" press="handleReprove"/>
+			            <Button xmlns="sap.m" id="button1" text="{i18n>ApproveButtonText}" type="Accept" icon="sap-icon://accept" width="120px" press="handleApprove"/>
+			        </contentRight>
+			    </Bar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

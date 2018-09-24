@@ -1,0 +1,47 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="br.com.sales.SalesOrderApproval.controller.Master" displayBlock="true">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>MasterTitle}">
+				<content>
+					<List noDataText="Drop list items here" id="list0" items="{/SalesOrderSet}">
+						<items>
+							<ObjectListItem type="Active" title="{SalesOrderID}" id="item1" number="{GrossAmount}" numberUnit="{CurrencyCode}"
+							press="handleListItemPress">
+								<attributes>
+									<ObjectAttribute id="attribute0" text="{CustomerName}"/>
+								</attributes>
+								<firstStatus>
+									<ObjectStatus id="status0" text="{path: 'CreatedAt', formatter: '.Formatter.date'}"/>
+								</firstStatus>
+								<secondStatus>
+									<ObjectStatus text="{path: 'LifecycleStatus', formatter: '.Formatter.statusText'}" state="{path: 'LifecycleStatus', formatter: '.Formatter.statusState'}" id="status1"/>
+								</secondStatus>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+				<subHeader>
+					<Bar id="bar0">
+						<contentMiddle/>
+						<contentLeft>
+							<SearchField xmlns="sap.m" placeholder="{i18n>SearchFor}" id="field0" liveChange="handleSearch"/>
+						</contentLeft>
+					</Bar>
+				</subHeader>
+				<footer>
+					<Bar id="bar1">
+						<contentRight>
+							<Select xmlns="sap.m" id="select0" icon="sap-icon://group-2" type="IconOnly" autoAdjustWidth="true" change="handleGroup">
+								<items>
+									<core:Item xmlns:core="sap.ui.core" key="None" text="{i18n>MasterGroupNone}" id="itemL0"/>
+									<core:Item xmlns:core="sap.ui.core" key="LifecycleStatus" text="{i18n>MasterGroupStatus}" id="itemL1"/>
+									<core:Item xmlns:core="sap.ui.core" key="GrossAmount" text="{i18n>MasterGroupAmount}" id="itemL2"/>
+								</items>
+							</Select>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
