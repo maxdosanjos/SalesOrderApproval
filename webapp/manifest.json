@@ -39,7 +39,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -78,9 +81,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -92,17 +97,24 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "TargetMaster",
-				"pattern": "",
-				"target": ["TargetMaster"]
-			}, {
-				"name": "Detail",
-				"pattern": "Orders/{orderID}",
-				"titleTarget": "",
-				"greedy": false,
-				"target": ["Detail"]
-			}],
+			"routes": [
+				{
+					"name": "TargetMaster",
+					"pattern": "",
+					"target": [
+						"TargetMaster"
+					]
+				},
+				{
+					"name": "Detail",
+					"pattern": "Orders/{orderID}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"Detail"
+					]
+				}
+			],
 			"targets": {
 				"TargetMaster": {
 					"viewType": "XML",
@@ -134,5 +146,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }
