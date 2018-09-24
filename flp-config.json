@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "br.com.sales.SalesOrderApproval.SalesOrderApproval",
+        "description": "App Sales Order Approval",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#SalesOrderApproval-Display",
+        "navigationComponentName": "br.com.sales.SalesOrderApproval",
+        "intentSemanticObject": "SalesOrderApproval",
+        "intentAction": "Display",
+        "html5ApplicationName": "salesorderapproval",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "0152181d-2044-44e6-acc2-ba54e2e445b0"
+        ],
+        "contentPackages": [
+            "7883551c-f2cf-43ab-91bf-d31771ae2491"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Sales Order Approval",
+        "subtitle": "SAP Fiori Sales Order Approval",
+        "searchKeywords": "Sales Order Approval,SAP Fiori Sales Order Approval",
+        "displayIconUrl": "sap-icon://accept",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
